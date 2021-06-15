@@ -2,7 +2,7 @@ def sparse_matrix_multiply(matrix_a, matrix_b):
     if len(matrix_a[0]) == len(matrix_b):
         sparse_a_dict = sparsify(matrix_a)
         sparse_b_dict = sparsify(matrix_b)
-        matrix_c = [[0] * len(matrix_a) for _ in range(len(matrix_b[0]))]
+        matrix_c = [[0] * len(matrix_b[0]) for _ in range(len(matrix_a))]
         for i,k in sparse_a_dict.keys():
             for j in range(len(matrix_b[0])):
                 if (k,j) in sparse_b_dict.keys():
@@ -20,8 +20,8 @@ def sparsify(matrix):
     return sparsed_dict
 
 
-one = [[1,2],[3,4]]
-two = [[2,2],[2,2]]
+one = [[1,2,3],[3,4,4]]
+two = [[2,2,2],[3,3,3],[4,4,4]]
 three = sparse_matrix_multiply(one, two)
 for r in three:
     print(r)
