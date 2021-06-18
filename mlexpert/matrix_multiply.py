@@ -1,3 +1,4 @@
+# testing git credentials
 def sparse_matrix_multiply(matrix_a, matrix_b):
     if len(matrix_a[0]) == len(matrix_b):
         sparse_a_dict = sparsify(matrix_a)
