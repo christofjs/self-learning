@@ -8,6 +8,9 @@ class Solution(object):
         return count
 
     def hammingWeight2(self,n):
+        # return the number of one bits in input
+        # much faster, about the same memory footprint
+        # and-ing with a value one less removes the rightmost one from n's bit representation
         count = 0
         while n > 0:
             n &= n - 1
